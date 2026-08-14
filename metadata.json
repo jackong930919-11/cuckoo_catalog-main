@@ -1,0 +1,6 @@
+{
+  "name": "CUCKOO Malaysia Product Catalog",
+  "description": "Official product catalog and rental showcase for CUCKOO Malaysia featuring Water Purifiers, Air Purifiers, Air Conditioners, Mattresses, Massage Chairs and Samsung Smart Products.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

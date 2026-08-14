@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="650" cy="120" r="80" fill="rgba(255,255,255,0.12)"/>
+  <rect x="80" y="120" width="640" height="340" rx="32" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.35)"/>
+  <rect x="120" y="170" width="220" height="220" rx="20" fill="rgba(255,255,255,0.18)"/>
+  <path d="M170 315 L230 230 L280 315 Z" fill="rgba(255,255,255,0.7)"/>
+  <rect x="390" y="210" width="200" height="22" rx="11" fill="rgba(255,255,255,0.8)"/>
+  <rect x="390" y="255" width="260" height="18" rx="9" fill="rgba(255,255,255,0.5)"/>
+  <rect x="390" y="290" width="220" height="18" rx="9" fill="rgba(255,255,255,0.5)"/>
+  <rect x="390" y="325" width="170" height="18" rx="9" fill="rgba(255,255,255,0.5)"/>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff">CUCKOO</text>
+  <text x="400" y="510" font-family="Arial, sans-serif" font-size="20" fill="#dbeafe">Healthy home essentials</text>
+</svg>
