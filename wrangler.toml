@@ -1,0 +1,21 @@
+name = "cuckoo-catalog"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+main = "dist/index.html"
+build = { command = "npm run build", cwd = "." }
+observability = { enabled = true }
+
+[env.production]
+name = "cuckoo-catalog-prod"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_paths = ["src/**/*.{ts,tsx}"]
+
+[deployment]
+route = ""
+zone_id = ""
