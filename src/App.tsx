@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroBanner } from './components/HeroBanner';
 import { ProductCard } from './components/ProductCard';
@@ -232,19 +232,6 @@ export default function App() {
     }, 60);
   };
 
-  // Lock category bar at top: measure its height and reserve space
-  const barRef = useRef<HTMLDivElement | null>(null);
-  const [barHeight, setBarHeight] = useState<number>(64);
-
-  useEffect(() => {
-    const setHeight = () => {
-      if (barRef.current) setBarHeight(Math.ceil(barRef.current.getBoundingClientRect().height));
-    };
-    setHeight();
-    window.addEventListener('resize', setHeight);
-    return () => window.removeEventListener('resize', setHeight);
-  }, []);
-
   return (
     <>
       <SeoHead />
@@ -270,9 +257,6 @@ export default function App() {
           setVisibleCount(6);
         }}
       />
-
-      {/* Reserve space equal to category bar height so fixed bar doesn't overlap content */}
-      <div aria-hidden style={{ height: `${barHeight}px` }} />
 
       {/* Main Hero Banner */}
       <HeroBanner
@@ -311,7 +295,7 @@ export default function App() {
         {activePage === 'all' && (
           <div id="category-filter-container" className="space-y-8">
             {/* Category Header & Filters (locked at top under navbar) */}
-            <div ref={barRef} id="category-filter-bar" className="category-locked relative z-30 bg-slate-50/95 backdrop-blur-md py-3 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 border-b border-slate-200/80 shadow-xs transition-all space-y-3">
+            <div id="category-filter-bar" className="relative z-30 bg-slate-50/95 backdrop-blur-md py-3 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 border-b border-slate-200/80 shadow-xs transition-all space-y-3">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-1">

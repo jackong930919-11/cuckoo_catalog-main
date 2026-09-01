@@ -32,14 +32,4 @@
   animation: float3D 3.5s ease-in-out infinite;
 }
 
-/* Locked category bar below navbar */
-.category-locked {
-  position: fixed;
-  top: var(--navbar-height, 64px);
-  left: 0;
-  right: 0;
-  z-index: 60;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-  backdrop-filter: blur(6px);
-}
 

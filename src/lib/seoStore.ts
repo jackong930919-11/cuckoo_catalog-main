@@ -7,7 +7,7 @@ export const DEFAULT_SEO_SETTINGS: SeoSettings = {
   metaTitle: 'CUCKOO Malaysia Official Sales Agent | Jack Ong (+6018-6668787) | Water Purifier, Air Purifier & Aircond Rental',
   metaDescription: 'Official CUCKOO Malaysia sales portal by Authorized Agent Jack Ong (+6018-6668787). Top water purifier & air purifier rental in Selangor, KL, and nationwide. CUCKOO vs Coway vs LG comparison, CUCKOO King Top 2, XCEL 2, GRANDE, TITAN, ACE Undersink, Vita-5TAR Airconds, and Napure Mattresses with free installation & servicing.',
   keywords: 'CUCKOO water purifier, water purifier, Water purifier in malaysia, top water purifier, cuckoo air purifier, air purifier, cuckoo vs coway, coway vs cuckoo, which brand of water purifier is better, CUCKOO Malaysia Official Agent, By Jack Ong, CUCKOO Agent Jack Ong 0186668787, aircond rental, mattress, water purifier in selangor',
-  canonicalUrl: 'https://cuckoo-malaysia.app',
+  canonicalUrl: 'https://www.cuckooebrandshop.com',
   ogTitle: 'CUCKOO Malaysia Official Sales Agent | Jack Ong (+6018-6668787)',
   ogDescription: 'Official CUCKOO Malaysia sales portal by Authorized Agent Jack Ong (+6018-6668787). Water Purifiers, Airconds, Air Purifiers & Mattresses with low monthly rental, FREE delivery, installation & warranty.',
   ogImage: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4e?auto=format&fit=crop&w=1200&q=80',
