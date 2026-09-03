@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, type FC } from 'react';
 import { getStoredSeoSettings } from '../lib/seoStore';
 
-export const SeoHead: React.FC = () => {
+export const SeoHead: FC = () => {
   useEffect(() => {
     const applySeo = () => {
       const settings = getStoredSeoSettings();

@@ -75,6 +75,9 @@ export function getRentalTenureOptions(product: Product): number[] {
 
 export const RentalCalculator: React.FC<RentalCalculatorProps> = ({ isOpen, onClose }) => {
   const [allProducts, setAllProducts] = useState<Product[]>(getStoredProducts());
+  const [selectedCategory, setSelectedCategory] = useState<ProductCategory | 'ALL'>('ALL');
+  const [selectedProductId, setSelectedProductId] = useState<string>(allProducts[0]?.id || '');
+  const [paymentType, setPaymentType] = useState<'rental' | 'outright'>('rental');
 
   useEffect(() => {
     const handleUpdate = (e: any) => {
@@ -84,15 +87,10 @@ export const RentalCalculator: React.FC<RentalCalculatorProps> = ({ isOpen, onCl
     return () => window.removeEventListener('cuckoo_products_updated', handleUpdate);
   }, []);
 
-  if (!isOpen) return null;
-
   const availableCategories = CATEGORIES_LIST.filter(c => {
     if (c.id === 'ALL') return true;
     return allProducts.some(p => p.category === c.id);
   });
-
-  const [selectedCategory, setSelectedCategory] = useState<ProductCategory | 'ALL'>('ALL');
-  const [selectedProductId, setSelectedProductId] = useState<string>(allProducts[0]?.id || '');
 
   // Products filtered by currently selected category
   const categoryProducts = selectedCategory === 'ALL'
@@ -103,8 +101,6 @@ export const RentalCalculator: React.FC<RentalCalculatorProps> = ({ isOpen, onCl
   
   const hasRental = Boolean(product.rentalPrice && product.rentalPrice !== 'Outright Only' && product.rentalPrice !== 'N/A');
   const hasOutright = Boolean(product.outrightPrice && product.outrightPrice !== 'N/A');
-
-  const [paymentType, setPaymentType] = useState<'rental' | 'outright'>('rental');
 
   // Sync payment type if current selection has no rental
   useEffect(() => {
@@ -137,6 +133,8 @@ export const RentalCalculator: React.FC<RentalCalculatorProps> = ({ isOpen, onCl
   // Find matching rental plans for selected contract tenure
   const matchingPlans = product.rentalPlans ? product.rentalPlans.filter(p => p.months === contractMonths) : [];
   const activeRentalPlan = matchingPlans[selectedPlanIndex] || matchingPlans[0];
+
+  if (!isOpen) return null;
 
   // Calculate monthly rate
   let displayedMonthlyRate = 0;
