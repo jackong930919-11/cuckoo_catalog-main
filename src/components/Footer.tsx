@@ -158,6 +158,20 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory, onOpenCalculat
           <VisitorCounter variant="footer" />
         </div>
 
+        <div className="mt-6 pt-6 border-t border-slate-800 text-[11px] leading-relaxed text-slate-500">
+          <p>
+            <strong className="text-slate-400">Disclaimer:</strong> This website is an independent CUCKOO product enquiry and sales support site. It is not the official CUCKOO website. Product information, prices, promotions, rental plans, availability and terms may change without prior notice. Some content may be drafted with the help of AI tools and reviewed by a CUCKOO sales representative team. Please contact us to confirm the latest product details, promotions and deals before registration. For sales enquiries, WhatsApp us at{' '}
+            <a href={`https://wa.me/${CUCKOO_CONTACT.whatsappNumber}`} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors">
+              +6018-6668787
+            </a>
+            . We aim to reply within 24 hours. Existing CUCKOO customers who need service, relocation, payment, account or complaint support should contact CUCKOO Hotline at{' '}
+            <a href="tel:1800888181" className="text-slate-400 hover:text-white transition-colors">
+              1800-88-8181
+            </a>
+            .
+          </p>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
           <p>© {new Date().getFullYear()} {CUCKOO_CONTACT.companyName}. All rights reserved.</p>
