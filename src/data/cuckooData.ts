@@ -1230,11 +1230,11 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Smarter Mini LED 4K Viewing, Powered by Vision AI (Model: UA65M1EHAKXXM)',
     description: 'Experience enhanced clarity, richer colors, and immersive sound powered by Samsung Vision AI. Features Mini LED Processor 4K, Pure Spectrum Color, Motion Xcelerator, DLG 120Hz, Object Tracking Sound (OTS Lite), Q-Symphony, Tizen Smart TV OS, and AI Companion.',
     image: '/images/samsungtv-main.png',
-    rentalPrice: 'RM 153 / mth',
-    outrightPrice: 'RM 4,599',
+    rentalPrice: 'RM 115 / mth',
+    outrightPrice: 'RM 4,599.00',
     ccspPrice: 'N/A',
     rentalPlans: [
-      { planName: '3-Year Rental Plan', monthlyRate: 153, months: 36, customerType: 'New & Existing Customer' }
+      { planName: '5-Year Rental Plan', monthlyRate: 115, months: 60, customerType: 'New & Existing Customer' }
     ],
     outrightPlans: [
       { optionName: 'Outright Purchase', outrightPrice: 'RM 4,599', perks: 'Free 2-Yr Standard + 1-Yr CUCKOO Extended Exclusive Warranty' }
@@ -1264,7 +1264,7 @@ export const PRODUCTS: Product[] = [
       'Dimensions & Weight': '1444.1 x 882.2 x 222 mm (Set w/ Stand) | Weight: 14.5 kg',
       'Power Consumption': 'Max 170W / Typical 111W / Standby 0.5W (206.04 kWh/yr)',
       'Purchase (Outright)': 'RM 4,599.00 (Free 2-Yr Standard + 1-Yr CUCKOO Extended Warranty)',
-      'Rental Plan': 'RM 153.00 / month (3 Years, Free 2-Yr Standard + 1-Yr CUCKOO Extended Warranty)'
+      'Rental Plan': 'RM 115.00 / month (5 Years / 60 Months, Free 2-Yr Standard + 1-Yr CUCKOO Extended Warranty)'
     }
   },
   {
