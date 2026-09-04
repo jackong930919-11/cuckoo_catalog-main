@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CalendarDays, Gift, Ticket, X } from 'lucide-react';
 
-const contestImage = '/images/Profile/Spend&Meet_LeeJunHo.jpg';
+const contestImage = '/images/Profile/Spend%26Meet_LeeJunHo.jpg';
 
 export const SpendMeetContestCard: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
