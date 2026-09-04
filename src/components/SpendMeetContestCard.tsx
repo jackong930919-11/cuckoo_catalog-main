@@ -22,11 +22,19 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
 
   return (
     <>
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => {
           setOpenedSlide(activeSlide);
           setIsOpen(true);
+        }}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setOpenedSlide(activeSlide);
+            setIsOpen(true);
+          }
         }}
         className={placement === 'hero'
           ? 'block w-full overflow-hidden rounded-2xl border border-amber-300/70 bg-slate-900 shadow-xl cursor-pointer group'
@@ -64,7 +72,7 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
             <Gift className="w-4 h-4" /> VIEW CONTEST DETAILS
           </span>
         </div>}
-      </button>
+      </div>
 
       {isOpen && (
         <div
