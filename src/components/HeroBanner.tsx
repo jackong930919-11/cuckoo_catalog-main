@@ -27,14 +27,6 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onScrollToCatalog, onScr
           <SpendMeetContestCard placement="hero" />
         </div>
 
-        <div className="mb-8 sm:mb-10 overflow-hidden rounded-2xl border border-slate-200/90 bg-slate-900 shadow-xl">
-          <img
-            src="/images/Profile/cuckoomadness12_2026.jpg"
-            alt="CUCKOO Madness 12 Promotion 2026"
-            className="block w-full aspect-[2048/780] object-cover"
-          />
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Main Hero Copy */}
