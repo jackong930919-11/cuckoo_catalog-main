@@ -376,11 +376,10 @@ export default function App() {
             {filteredProducts.length > 0 ? (
               <div className="space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Dedicated Columns for Promotions: 1st New Launch, 2nd Hot Selling, 3rd Top Pick (Only shown on ALL Products view) */}
+                  {/* Dedicated Promotion Columns (Only shown on ALL Products view) */}
                   {showPromoCards && (
                     <>
                       <PromoCard key="promo-new-launch" variant="NEW_LAUNCH" onOpenCalculator={() => setIsCalculatorOpen(true)} />
-                      <PromoCard key="promo-hot-selling" variant="HOT_SELLING" onOpenCalculator={() => setIsCalculatorOpen(true)} />
                       <PromoCard key="promo-top-pick" variant="TOP_PICK" onOpenCalculator={() => setIsCalculatorOpen(true)} />
                     </>
                   )}

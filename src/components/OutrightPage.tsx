@@ -137,12 +137,11 @@ export const OutrightPage: React.FC<OutrightPageProps> = ({ onSelectProduct }) =
         </div>
       </div>
 
-      {/* 3x3 Grid Layout for Outright Products with 3 Promotion Columns */}
+      {/* Outright Products with Promotion Columns */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Promotional Column Cards: 1st New Launch, 2nd Hot Selling, 3rd Top Pick */}
+        {/* Promotional Column Cards: New Launch and Top Pick */}
         {showPromoCards && [
           <PromoCard key="outright-promo-new-launch" variant="NEW_LAUNCH" />,
-          <PromoCard key="outright-promo-hot-selling" variant="HOT_SELLING" />,
           <PromoCard key="outright-promo-top-pick" variant="TOP_PICK" />
         ]}
 

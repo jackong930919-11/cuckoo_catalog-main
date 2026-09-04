@@ -137,12 +137,11 @@ export const CcspPage: React.FC<CcspPageProps> = ({ onSelectProduct }) => {
         </div>
       </div>
 
-      {/* 3x3 Grid Layout for CCSP Products with 3 Promotion Columns */}
+      {/* CCSP Products with Promotion Columns */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Promotional Column Cards: 1st New Launch, 2nd Hot Selling, 3rd Top Pick */}
+        {/* Promotional Column Cards: New Launch and Top Pick */}
         {showPromoCards && [
           <PromoCard key="ccsp-promo-new-launch" variant="NEW_LAUNCH" />,
-          <PromoCard key="ccsp-promo-hot-selling" variant="HOT_SELLING" />,
           <PromoCard key="ccsp-promo-top-pick" variant="TOP_PICK" />
         ]}
 

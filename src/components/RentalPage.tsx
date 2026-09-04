@@ -151,12 +151,11 @@ export const RentalPage: React.FC<RentalPageProps> = ({ onSelectProduct, onOpenC
         </div>
       </div>
 
-      {/* 3x3 Grid Layout for Rental Products with 3 Promotion Columns */}
+      {/* Rental Products with Promotion Columns */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Promotional Column Cards: 1st New Launch, 2nd Hot Selling, 3rd Top Pick */}
+        {/* Promotional Column Cards: New Launch and Top Pick */}
         {showPromoCards && [
           <PromoCard key="rental-promo-new-launch" variant="NEW_LAUNCH" onOpenCalculator={onOpenCalculator} />,
-          <PromoCard key="rental-promo-hot-selling" variant="HOT_SELLING" onOpenCalculator={onOpenCalculator} />,
           <PromoCard key="rental-promo-top-pick" variant="TOP_PICK" onOpenCalculator={onOpenCalculator} />
         ]}
 
