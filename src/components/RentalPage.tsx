@@ -13,7 +13,7 @@ interface RentalPageProps {
 export const RentalPage: React.FC<RentalPageProps> = ({ onSelectProduct, onOpenCalculator }) => {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [visibleCount, setVisibleCount] = useState<number>(6); // 3 promo cards + 6 products = 9 items (3x3 grid)
+  const [visibleCount, setVisibleCount] = useState<number>(7); // 2 promo cards + 7 products = 9 items (3x3 grid)
   const [products, setProducts] = useState<Product[]>(getStoredProducts());
 
   useEffect(() => {
@@ -122,7 +122,7 @@ export const RentalPage: React.FC<RentalPageProps> = ({ onSelectProduct, onOpenC
               onChange={(e) => {
                 const val = e.target.value;
                 setSearchQuery(val);
-                setVisibleCount(selectedCategory === 'ALL' && val.trim() === '' ? 6 : 9);
+                setVisibleCount(selectedCategory === 'ALL' && val.trim() === '' ? 7 : 9);
               }}
               placeholder="Search rental models..."
               className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 outline-none focus:ring-2 focus:ring-indigo-100"
@@ -137,7 +137,7 @@ export const RentalPage: React.FC<RentalPageProps> = ({ onSelectProduct, onOpenC
               key={cat.id}
               onClick={() => {
                 setSelectedCategory(cat.id);
-                setVisibleCount(cat.id === 'ALL' && searchQuery.trim() === '' ? 6 : 9);
+                setVisibleCount(cat.id === 'ALL' && searchQuery.trim() === '' ? 7 : 9);
               }}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all border shrink-0 cursor-pointer ${
                 selectedCategory === cat.id

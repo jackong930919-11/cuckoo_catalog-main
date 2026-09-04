@@ -30,7 +30,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
-  const [visibleCount, setVisibleCount] = useState<number>(6); // 3 promo cards + 6 products = 9 items (3 rows x 3 columns)
+  const [visibleCount, setVisibleCount] = useState<number>(7); // 2 promo cards + 7 products = 9 items (3 rows x 3 columns)
 
   // Dynamic products state synced with CMS
   const [allProducts, setAllProducts] = useState<Product[]>(getStoredProducts());
@@ -213,7 +213,7 @@ export default function App() {
 
   const handleCategorySelect = (catId: ProductCategory | 'ALL') => {
     setSelectedCategory(catId);
-    setVisibleCount(catId === 'ALL' && searchQuery.trim() === '' ? 6 : 9);
+    setVisibleCount(catId === 'ALL' && searchQuery.trim() === '' ? 7 : 9);
 
     setTimeout(() => {
       const targetSection = document.getElementById('category-filter-container') || document.getElementById('product-catalog');
@@ -254,7 +254,7 @@ export default function App() {
         onGoHome={() => {
           setSelectedCategory('ALL');
           setSearchQuery('');
-          setVisibleCount(6);
+          setVisibleCount(7);
         }}
       />
 
