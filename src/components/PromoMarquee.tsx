@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const PromoMarquee: React.FC = () => {
-  const promoText = "💥 Limited Time Offer : CUCKOO Madness 12 Promotion until 30 September 2026! 💥";
+  const promoText = "💥 LIMITED TIME OFFER : CUCKOO MADNESS 12 PROMOTION UNTIL 30 SEPTEMBER 2026! 💥";
 
   return (
     <div className="w-full bg-gradient-to-r from-red-700 via-rose-600 to-red-700 text-white font-extrabold text-xs sm:text-sm py-2 overflow-hidden shadow-inner border-y border-red-800 flex items-center select-none">
