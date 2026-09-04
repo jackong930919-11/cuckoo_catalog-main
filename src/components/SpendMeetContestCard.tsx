@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CalendarDays, Gift, Ticket, X } from 'lucide-react';
 
 const contestImage = '/images/Profile/Spend%26Meet_LeeJunHo.jpg';
-const madnessImage = '/images/Madness12-promo.png';
+const madnessImage = '/images/Profile/cuckoomadness12_2026.jpg';
 
 interface SpendMeetContestCardProps {
   placement?: 'card' | 'hero';
@@ -31,8 +31,8 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
       >
         <div className={placement === 'hero' ? 'relative aspect-[2048/780] bg-slate-800 overflow-hidden' : 'relative aspect-4/3 bg-slate-800 overflow-hidden'}>
           <img
-            src={placement === 'hero' ? madnessImage : activeSlide === 0 ? contestImage : madnessImage}
-            alt={placement === 'hero' ? 'CUCKOO Madness 12 Promotion' : activeSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'}
+            src={activeSlide === 0 ? contestImage : madnessImage}
+            alt={activeSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           {placement === 'card' && (
