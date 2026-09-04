@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { CalendarDays, Gift, Ticket, X } from 'lucide-react';
 
 const contestImage = '/images/Profile/Spend%26Meet_LeeJunHo.jpg';
@@ -74,7 +75,7 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
         </div>}
       </div>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -140,7 +141,8 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
               <p className="text-xs text-slate-500">*Terms and conditions apply.</p>
             </div>}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
