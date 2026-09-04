@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header ref={headerRef} className="relative lg:sticky lg:top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <header ref={headerRef} className="relative z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
       {/* Top Agent Announcement Bar */}
       <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">

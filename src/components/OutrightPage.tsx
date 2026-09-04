@@ -90,8 +90,8 @@ export const OutrightPage: React.FC<OutrightPageProps> = ({ onSelectProduct }) =
         </div>
       </div>
 
-      {/* Category Filter Tabs & Search (Sticky on scroll) */}
-      <div className="relative lg:sticky lg:top-[128px] z-30 bg-slate-50/95 backdrop-blur-md py-3 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 border-b border-slate-200/80 shadow-xs transition-all space-y-3">
+      {/* Category Filter Tabs & Search */}
+      <div className="relative z-30 bg-slate-50/95 backdrop-blur-md py-3 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 border-b border-slate-200/80 shadow-xs transition-all space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <Filter className="w-4 h-4 text-amber-600" />
