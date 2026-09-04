@@ -4,7 +4,11 @@ import { CalendarDays, Gift, Ticket, X } from 'lucide-react';
 const contestImage = '/images/Profile/Spend%26Meet_LeeJunHo.jpg';
 const madnessImage = '/images/Madness12-promo.png';
 
-export const SpendMeetContestCard: React.FC = () => {
+interface SpendMeetContestCardProps {
+  placement?: 'card' | 'hero';
+}
+
+export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ placement = 'card' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -20,36 +24,42 @@ export const SpendMeetContestCard: React.FC = () => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="bg-slate-950 text-white rounded-2xl border-2 border-amber-400/80 shadow-xl overflow-hidden flex flex-col text-left group relative cursor-pointer hover:-translate-y-1 transition-transform duration-300"
+        className={placement === 'hero'
+          ? 'block w-full overflow-hidden rounded-2xl border border-amber-300/70 bg-slate-900 shadow-xl cursor-pointer group'
+          : 'bg-slate-950 text-white rounded-2xl border-2 border-amber-400/80 shadow-xl overflow-hidden flex flex-col text-left group relative cursor-pointer hover:-translate-y-1 transition-transform duration-300'}
         aria-label="Open CUCKOO Spend and Meet LEE JUNHO Contest details"
       >
-        <div className="relative aspect-4/3 bg-slate-800 overflow-hidden">
+        <div className={placement === 'hero' ? 'relative aspect-[2048/780] bg-slate-800 overflow-hidden' : 'relative aspect-4/3 bg-slate-800 overflow-hidden'}>
           <img
-            src={activeSlide === 0 ? contestImage : madnessImage}
-            alt={activeSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'}
+            src={placement === 'hero' ? madnessImage : activeSlide === 0 ? contestImage : madnessImage}
+            alt={placement === 'hero' ? 'CUCKOO Madness 12 Promotion' : activeSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-          <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-lg">
-            SPECIAL CONTEST
-          </span>
-          <div className="absolute bottom-3 left-3 right-3">
-            <p className="text-[10px] font-extrabold text-amber-300 uppercase tracking-widest">
-              {activeSlide === 0 ? 'Spend & Meet' : 'Limited Time Offer'}
-            </p>
-            <h3 className="text-lg font-black text-white leading-tight">
-              {activeSlide === 0 ? 'LEE JUNHO Contest' : 'CUCKOO MADNESS 12'}
-            </h3>
-          </div>
+          {placement === 'card' && (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+              <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-lg">
+                SPECIAL CONTEST
+              </span>
+              <div className="absolute bottom-3 left-3 right-3">
+                <p className="text-[10px] font-extrabold text-amber-300 uppercase tracking-widest">
+                  {activeSlide === 0 ? 'Spend & Meet' : 'Limited Time Offer'}
+                </p>
+                <h3 className="text-lg font-black text-white leading-tight">
+                  {activeSlide === 0 ? 'LEE JUNHO Contest' : 'CUCKOO MADNESS 12'}
+                </h3>
+              </div>
+            </>
+          )}
         </div>
-        <div className="p-4 space-y-3">
+        {placement === 'card' && <div className="p-4 space-y-3">
           <p className="text-xs text-slate-300 leading-relaxed">
             Spend RM200 or more from 1 September to 10 October 2026 for a chance to win concert tickets and a photo moment with LEE JUNHO.
           </p>
           <span className="w-full py-2.5 rounded-xl bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2">
             <Gift className="w-4 h-4" /> VIEW CONTEST DETAILS
           </span>
-        </div>
+        </div>}
       </button>
 
       {isOpen && (

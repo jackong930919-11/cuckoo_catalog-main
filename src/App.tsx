@@ -9,7 +9,6 @@ import { RentalPage } from './components/RentalPage';
 import { OutrightPage } from './components/OutrightPage';
 import { CcspPage } from './components/CcspPage';
 import { PromoCard } from './components/NewLaunchPromoCard';
-import { SpendMeetContestCard } from './components/SpendMeetContestCard';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { HomeVideoShowcase } from './components/HomeVideoShowcase';
 import { ContactForm } from './components/ContactForm';
@@ -381,7 +380,6 @@ export default function App() {
                   {showPromoCards && (
                     <>
                       <PromoCard key="promo-new-launch" variant="NEW_LAUNCH" onOpenCalculator={() => setIsCalculatorOpen(true)} />
-                      <SpendMeetContestCard key="promo-spend-meet-lee-junho" />
                       <PromoCard key="promo-hot-selling" variant="HOT_SELLING" onOpenCalculator={() => setIsCalculatorOpen(true)} />
                       <PromoCard key="promo-top-pick" variant="TOP_PICK" onOpenCalculator={() => setIsCalculatorOpen(true)} />
                     </>
