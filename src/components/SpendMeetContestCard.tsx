@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CalendarDays, Gift, Ticket, X } from 'lucide-react';
 
 const contestImage = '/images/Profile/Spend%26Meet_LeeJunHo.jpg';
+const madnessImage = '/images/Madness12-promo.png';
 
 export const SpendMeetContestCard: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % 2);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <>
@@ -16,8 +25,8 @@ export const SpendMeetContestCard: React.FC = () => {
       >
         <div className="relative aspect-4/3 bg-slate-800 overflow-hidden">
           <img
-            src={contestImage}
-            alt="CUCKOO Spend and Meet LEE JUNHO Contest"
+            src={activeSlide === 0 ? contestImage : madnessImage}
+            alt={activeSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
@@ -25,8 +34,12 @@ export const SpendMeetContestCard: React.FC = () => {
             SPECIAL CONTEST
           </span>
           <div className="absolute bottom-3 left-3 right-3">
-            <p className="text-[10px] font-extrabold text-amber-300 uppercase tracking-widest">Spend & Meet</p>
-            <h3 className="text-lg font-black text-white leading-tight">LEE JUNHO Contest</h3>
+            <p className="text-[10px] font-extrabold text-amber-300 uppercase tracking-widest">
+              {activeSlide === 0 ? 'Spend & Meet' : 'Limited Time Offer'}
+            </p>
+            <h3 className="text-lg font-black text-white leading-tight">
+              {activeSlide === 0 ? 'LEE JUNHO Contest' : 'CUCKOO MADNESS 12'}
+            </h3>
           </div>
         </div>
         <div className="p-4 space-y-3">
