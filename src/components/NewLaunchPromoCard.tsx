@@ -32,13 +32,13 @@ export const PromoCard: React.FC<PromoCardProps> = ({ variant = 'NEW_LAUNCH', on
           tagBg: 'bg-rose-500',
           image: '/images/Madness12-promo.png',
           subtitle: 'Limited Time Offer',
-          title: 'Madness 12 RM12 per month',
-          description: 'To celebrate CUCKOO 12-Years Anniversary, CUCKOO doing special promotion with just RM12 per month for our household appliances.',
-          giftTitle: 'MADNESS 12 Promotion',
-          giftDesc: 'Start from RM12/month for Water Purifier / Air Purifier / Treadmill / Massage Chair / Mattress.',
-          perk1: 'RM12/mth Special Anniversary Rental Rate',
+          title: 'CUCKOO KING TOP 2 RM12 FOR FIRST 12 MONTHS',
+          description: 'Enjoy CUCKOO KING TOP 2 with RM12 for the first 12 months, designed for households that want premium water purification with easy monthly value.',
+          giftTitle: 'KING TOP 2 Promotion',
+          giftDesc: 'RM12/month for the first 12 months with premium water purification value and trusted CUCKOO support.',
+          perk1: 'RM12/month for the first 12 months',
           perk2: 'Free Scheduled Servicing & Filter Replacements Included',
-          inquiryMsg: `Hi ${CUCKOO_CONTACT.agentName},\nI am interested in the Madness 12 RM12 per month promotion on CUCKOO Portal!\n\nPlease guide me on how to register for the RM12/month anniversary deal. Thank you!`,
+          inquiryMsg: `Hi ${CUCKOO_CONTACT.agentName},\nI am interested in the CUCKOO KING TOP 2 RM12 for first 12 months promotion on CUCKOO Portal!\n\nPlease guide me on how to register and confirm eligibility. Thank you!`,
         };
       case 'TOP_PICK':
         return {

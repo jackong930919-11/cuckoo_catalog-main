@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import { CalendarDays, Gift, Ticket, X } from 'lucide-react';
 
 const contestImage = '/images/Profile/Spend%26Meet_LeeJunHo.jpg';
-const madnessImage = '/images/Profile/cuckoomadness12_2026.jpg';
 
 interface SpendMeetContestCardProps {
   placement?: 'card' | 'hero';
@@ -15,10 +14,7 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
   const [openedSlide, setOpenedSlide] = useState(0);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % 2);
-    }, 5000);
-    return () => window.clearInterval(timer);
+    setActiveSlide(0);
   }, []);
 
   return (
@@ -44,8 +40,8 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
       >
         <div className={placement === 'hero' ? 'relative aspect-[2048/780] bg-slate-800 overflow-hidden' : 'relative aspect-4/3 bg-slate-800 overflow-hidden'}>
           <img
-            src={activeSlide === 0 ? contestImage : madnessImage}
-            alt={activeSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'}
+            src={contestImage}
+            alt="CUCKOO Spend and Meet LEE JUNHO Contest"
             className={placement === 'hero' ? 'block w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500' : 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'}
           />
           {placement === 'card' && (
@@ -56,10 +52,10 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
               </span>
               <div className="absolute bottom-3 left-3 right-3">
                 <p className="text-[10px] font-extrabold text-amber-300 uppercase tracking-widest">
-                  {activeSlide === 0 ? 'Spend & Meet' : 'Limited Time Offer'}
+                  Spend &amp; Meet
                 </p>
                 <h3 className="text-lg font-black text-white leading-tight">
-                  {activeSlide === 0 ? 'LEE JUNHO Contest' : 'CUCKOO MADNESS 12'}
+                  LEE JUNHO Contest
                 </h3>
               </div>
             </>
@@ -95,8 +91,8 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
             >
               <X className="w-5 h-5" />
             </button>
-            <img src={openedSlide === 0 ? contestImage : madnessImage} alt={openedSlide === 0 ? 'CUCKOO Spend and Meet LEE JUNHO Contest' : 'CUCKOO Madness 12 Promotion'} className="w-full h-auto block" />
-            {openedSlide === 0 ? <div className="p-5 sm:p-7 text-slate-800 space-y-5">
+            <img src={contestImage} alt="CUCKOO Spend and Meet LEE JUNHO Contest" className="w-full h-auto block" />
+            <div className="p-5 sm:p-7 text-slate-800 space-y-5">
               <div>
                 <h2 id="contest-title" className="text-xl sm:text-2xl font-black text-slate-950">
                   CUCKOO&apos;s Spend &amp; Meet LEE JUNHO Contest
@@ -129,17 +125,7 @@ export const SpendMeetContestCard: React.FC<SpendMeetContestCardProps> = ({ plac
               </section>
 
               <p className="text-xs text-slate-500">*Terms and conditions apply.</p>
-            </div> : <div className="p-5 sm:p-7 text-slate-800 space-y-5">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-950">CUCKOO MADNESS 12 PROMOTION</h2>
-              <p className="text-sm leading-relaxed">Celebrate CUCKOO&apos;s 12th Anniversary with a special <strong>RM12 per month</strong> promotion for selected CUCKOO household appliances.</p>
-              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
-                <h3 className="font-black text-amber-900">Products under this promotion</h3>
-                <p className="mt-2 text-sm leading-relaxed">Water Purifier, Air Purifier, Treadmill, Massage Chair and Mattress.</p>
-                <p className="mt-2 text-sm font-bold text-amber-800">RM12/month anniversary rental rate</p>
-              </div>
-              <p className="text-sm leading-relaxed">Please contact us to confirm product eligibility, availability, rental terms and the latest promotion details before registration.</p>
-              <p className="text-xs text-slate-500">*Terms and conditions apply.</p>
-            </div>}
+            </div>
           </div>
         </div>,
         document.body

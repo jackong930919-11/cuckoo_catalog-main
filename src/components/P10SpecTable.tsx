@@ -13,7 +13,7 @@ export const P10SpecTable: React.FC<P10SpecTableProps> = ({ onInquire }) => {
       return;
     }
     const text = encodeURIComponent(
-      `Hi ${CUCKOO_CONTACT.agentName},\nI am interested in CUCKOO P10 Pressure Multi-Cooker (CRP-P10 Series in Pinkish Pearl White, RM 1,575.00)${planDetails ? ` (${planDetails})` : ''}.\nPlease share more details and order procedures. Thank you!`
+      `Hi ${CUCKOO_CONTACT.agentName},\nI am interested in CUCKOO P10 Pressure Multi-Cooker (CRP-P10 Series in Pinkish Pearl White, RM 1,800.00)${planDetails ? ` (${planDetails})` : ''}.\nPlease share more details and order procedures. Thank you!`
     );
     window.open(`https://wa.me/${CUCKOO_CONTACT.whatsappNumber}?text=${text}`, '_blank');
   };
@@ -333,7 +333,7 @@ export const P10SpecTable: React.FC<P10SpecTableProps> = ({ onInquire }) => {
             <tr className="hover:bg-slate-900/40 bg-rose-950/20">
               <td className="py-3 px-4 font-bold text-rose-300 align-top">Purchase Price (Outright)</td>
               <td className="py-3 px-4 text-slate-300 space-y-1">
-                <p className="text-rose-300 font-black text-base">RM 1,575.00</p>
+                <p className="text-rose-300 font-black text-base">RM 1,800.00</p>
                 <p className="text-xs text-slate-300 font-semibold">
                   ✓ Includes Official 1-Year CUCKOO Malaysia Warranty
                 </p>
@@ -350,7 +350,7 @@ export const P10SpecTable: React.FC<P10SpecTableProps> = ({ onInquire }) => {
       <div className="p-4 rounded-2xl bg-gradient-to-r from-rose-950/70 to-slate-900/90 border border-rose-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="text-xs">
           <p className="font-extrabold text-white">Ready to elevate your home cooking with CUCKOO P10?</p>
-          <p className="text-slate-300 mt-0.5">Order outright for RM 1,575.00 with official 1-year CUCKOO warranty from authorized agent <strong className="text-amber-400">{CUCKOO_CONTACT.agentName}</strong>.</p>
+          <p className="text-slate-300 mt-0.5">Order outright for RM 1,800.00 with official 1-year CUCKOO warranty from authorized agent <strong className="text-amber-400">{CUCKOO_CONTACT.agentName}</strong>.</p>
         </div>
         <button
           onClick={() => handleWhatsApp('P10 Special Offer')}

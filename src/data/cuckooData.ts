@@ -750,11 +750,11 @@ export const PRODUCTS: Product[] = [
     name: 'CUCKOO i Model',
     category: 'AIR PURIFIER',
     subtitle: 'Compact Design • LED Air Quality Indicator • 3-Stage Filtration',
-    description: 'Compact CUCKOO i Model Air Purifier featuring real-time LED air quality indicator, dust sensor automatic operation, Ioniser mode, and 3-stage Ultra-Deo HEPA H13 filtration. Special Outright promotion at RM1,400 (Discount RM600 off original RM2,000 price, includes 3 Sets of Ultra-Deo HEPA Filters).',
+    description: 'Compact CUCKOO i Model Air Purifier featuring real-time LED air quality indicator, dust sensor automatic operation, Ioniser mode, and 3-stage Ultra-Deo HEPA H13 filtration. Special Outright promotion at RM999.00 with free extra 2 HEPA filters included.',
     image: '/images/imodel-main.png',
     rentalPrice: 'Outright Only',
-    outrightPrice: 'RM 1,400 (Was RM 2,000)',
-    ccspPrice: 'Includes 3 Sets Filters',
+    outrightPrice: 'RM 999.00',
+    ccspPrice: 'Free Extra 2 HEPA Filters',
     features: [
       'Compact Design & Space-Saving',
       'LED Air Quality Indicator',
@@ -763,10 +763,10 @@ export const PRODUCTS: Product[] = [
       'Coverage Area 32.9m² / 354 sq. ft.',
       'CADR Rate 219 m³/h',
       'Power Consumption 45W | Noise <55dB',
-      'Includes 3 Sets Ultra-Deo HEPA Filters'
+      'Free Extra 2 HEPA Filters'
     ],
     popular: true,
-    tag: 'RM600 OFF PROMO 🔥',
+    tag: 'RM999 + 2 FREE HEPA FILTERS 🔥',
     specs: {
       'Product Name': 'CUCKOO i Model Air Purifier',
       'Coverage Area': '32.9m² / 354ft²',
@@ -779,7 +779,7 @@ export const PRODUCTS: Product[] = [
       'Filters': 'Ultra-Deo HEPA Filter (Pre-Filter, Deodorisation Filter, True HEPA H13 Filter)',
       'DIY Filter Replacement': 'Every 4 Months',
       'Dimensions & Weight': '244mm(W) x 244mm(D) x 544mm(H) | 3.45kg',
-      'Outright Purchase': 'RM 1,400 (Original RM 2,000 - Save RM 600! Includes 3 Sets Filters)'
+      'Outright Purchase': 'RM 999.00 (Includes 2 Free Extra HEPA Filters)'
     }
   },
 
@@ -1323,7 +1323,7 @@ export const PRODUCTS: Product[] = [
     description: 'Discover the joy of cooking with CUCKOO P10! Features Eco Pressure cooking, Xwall Diamond Coating, 14 Safety Features, Stainless Steel Detachable Cover, Double Layer Rubber Packing, Auto Steam Sterilisation, Voice Navigation (English & Mandarin), Smart Algorithm, and 9 Cooking Modes.',
     image: '/images/p10-main.png',
     rentalPrice: 'Outright Only',
-    outrightPrice: 'RM 1,575.00',
+    outrightPrice: 'RM 1,800.00',
     ccspPrice: 'N/A',
     features: [
       'Eco Pressure Multi Cooker (78.4 kPa)',
@@ -1355,7 +1355,7 @@ export const PRODUCTS: Product[] = [
       'Detachable Cover': 'Stainless Steel Detachable',
       'Voice Navigation': 'English, Mandarin',
       'Other Features': 'Soft Steam Cap, Double Layer Rubber Packing, Preset Cooking',
-      'Purchase Price': 'RM 1,575.00 (Outright)'
+      'Purchase Price': 'RM 1,800.00 (Outright)'
     }
   },
 

@@ -13,7 +13,7 @@ export const IModelSpecTable: React.FC<IModelSpecTableProps> = ({ onInquire }) =
       return;
     }
     const text = encodeURIComponent(
-      `Hi ${CUCKOO_CONTACT.agentName},\nI am interested in CUCKOO i Model Air Purifier (Outright Promo RM1,400 - Discount RM600)${planDetails ? ` (${planDetails})` : ''}.\nPlease share more details on purchasing and delivery. Thank you!`
+      `Hi ${CUCKOO_CONTACT.agentName},\nI am interested in CUCKOO i Model Air Purifier (Outright Promo RM999.00 with Free Extra 2 HEPA Filters)${planDetails ? ` (${planDetails})` : ''}.\nPlease share more details on purchasing and delivery. Thank you!`
     );
     window.open(`https://wa.me/${CUCKOO_CONTACT.whatsappNumber}?text=${text}`, '_blank');
   };
@@ -30,20 +30,20 @@ export const IModelSpecTable: React.FC<IModelSpecTableProps> = ({ onInquire }) =
           <h3 className="text-xl sm:text-2xl font-black text-white tracking-wide flex items-center gap-2 flex-wrap">
             <span>CUCKOO i Model Air Purifier</span>
             <span className="text-xs px-2.5 py-0.5 rounded-full bg-red-500/20 text-rose-300 border border-rose-500/40 font-bold">
-              RM600 Off Promotion!
+              RM999 Promotion!
             </span>
           </h3>
           <p className="text-xs sm:text-sm text-amber-300 font-bold mt-1 uppercase tracking-wider">
             Compact Design • LED Air Quality Indicator • 3-Stage Filtration
           </p>
           <p className="text-xs text-slate-400 mt-0.5 max-w-2xl">
-            Clean air in a compact footprint with Dust Sensor auto operation, Ioniser mode, and 3-layer Ultra-Deo HEPA H13 filtration. Includes 3 Sets of Ultra-Deo HEPA Filters!
+            Clean air in a compact footprint with Dust Sensor auto operation, Ioniser mode, and 3-layer Ultra-Deo HEPA H13 filtration. Includes free extra 2 HEPA filters with the outright promotion!
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <button
-            onClick={() => handleWhatsApp('i Model Promo RM1,400')}
+            onClick={() => handleWhatsApp('i Model Promo RM999')}
             className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md shadow-emerald-950 cursor-pointer shrink-0"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
@@ -59,20 +59,19 @@ export const IModelSpecTable: React.FC<IModelSpecTableProps> = ({ onInquire }) =
             <Tag className="w-6 h-6" />
           </div>
           <div>
-            <div className="text-xs font-extrabold uppercase text-red-400 tracking-wider">Limited Time Outright Discount</div>
+            <div className="text-xs font-extrabold uppercase text-red-400 tracking-wider">Limited Time Outright Promotion</div>
             <div className="text-sm sm:text-base font-black text-white flex items-center gap-2 flex-wrap">
-              <span className="line-through text-slate-400 text-xs sm:text-sm">RM 2,000</span>
-              <span className="text-amber-400 text-lg sm:text-xl">RM 1,400</span>
-              <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md uppercase">SAVE RM 600</span>
+              <span className="text-amber-400 text-lg sm:text-xl">RM 999.00</span>
+              <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md uppercase">FREE 2 EXTRA HEPA FILTERS</span>
             </div>
-            <p className="text-[11px] text-slate-300 mt-0.5">Includes <strong className="text-amber-300">3 Sets of Ultra-Deo HEPA Filters</strong> with 1-Year Service & Warranty</p>
+            <p className="text-[11px] text-slate-300 mt-0.5">Includes <strong className="text-amber-300">2 Extra Ultra-Deo HEPA Filters</strong> with 1-Year Service & Warranty</p>
           </div>
         </div>
         <button
-          onClick={() => handleWhatsApp('Claim RM600 Discount i Model')}
+          onClick={() => handleWhatsApp('Claim RM999 i Model')}
           className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shrink-0 self-start sm:self-center transition-colors shadow-lg cursor-pointer"
         >
-          Claim RM1,400 Deal
+          Claim RM999 Deal
         </button>
       </div>
 
@@ -209,17 +208,16 @@ export const IModelSpecTable: React.FC<IModelSpecTableProps> = ({ onInquire }) =
                   <div>
                     <div className="text-[11px] text-slate-400 font-medium">Special Outright Discounted Price</div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xl font-black text-amber-400">RM 1,400</span>
-                      <span className="line-through text-slate-500 text-xs">RM 2,000</span>
-                      <span className="text-[10px] font-bold text-red-400 bg-red-950 px-2 py-0.5 rounded border border-red-800">Save RM 600!</span>
+                      <span className="text-xl font-black text-amber-400">RM 999.00</span>
+                      <span className="text-[10px] font-bold text-red-400 bg-red-950 px-2 py-0.5 rounded border border-red-800">Free 2 Extra HEPA Filters</span>
                     </div>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">Includes 3 Sets of Ultra-Deo HEPA Filters & Official Warranty</span>
+                    <span className="text-[10px] text-slate-400 block mt-0.5">Includes 2 Extra Ultra-Deo HEPA Filters & Official Warranty</span>
                   </div>
                   <button
-                    onClick={() => handleWhatsApp('i Model Promo Outright RM1,400')}
+                    onClick={() => handleWhatsApp('i Model Promo Outright RM999')}
                     className="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-[11px] shrink-0 cursor-pointer transition-colors"
                   >
-                    Buy at RM1,400 Now
+                    Buy at RM999 Now
                   </button>
                 </div>
               </td>
