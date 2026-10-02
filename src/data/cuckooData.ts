@@ -13,7 +13,7 @@ export const CUCKOO_CONTACT: ContactInfo = {
 };
 
 export const CATEGORIES_LIST: { id: ProductCategory | 'ALL'; label: string; count: number }[] = [
-  { id: 'ALL', label: 'All Products', count: 34 },
+  { id: 'ALL', label: 'All Products', count: 35 },
   { id: 'WATER PURIFIER', label: 'Water Purifier', count: 11 },
   { id: 'OUTDOOR FILTER', label: 'Outdoor Filter', count: 1 },
   { id: 'AIR PURIFIER', label: 'Air Purifier', count: 7 },
@@ -22,6 +22,7 @@ export const CATEGORIES_LIST: { id: ProductCategory | 'ALL'; label: string; coun
   { id: 'MATTRESS', label: 'Mattress', count: 4 },
   { id: 'SAMSUNG PRODUCT', label: 'Samsung Product', count: 4 },
   { id: 'RICE COOKER', label: 'Rice Cooker', count: 1 },
+  { id: 'DISHWASHER', label: 'Dishwasher', count: 1 },
   { id: 'DAYBED', label: 'Daybed', count: 1 },
   { id: 'TREADMILL', label: 'Treadmill', count: 1 },
 ];
@@ -1315,6 +1316,47 @@ export const PRODUCTS: Product[] = [
   },
 
   // --- RICE COOKER (1 Model) ---
+  {
+    id: 'dw-1',
+    name: 'CUCKOO QUBE Table Top Dishwasher',
+    category: 'DISHWASHER',
+    subtitle: 'Sleek 6-Pax Tabletop Dishwasher with Sterilisation & Drying',
+    description: 'The CUCKOO QUBE Table Top Dishwasher brings powerful in-and-out sterilisation, high-heat cleaning, fast drying, and a high-capacity 6-pax design to modern homes. Built for convenience, hygiene, and a premium kitchen aesthetic.',
+    image: '/images/QUBE-main.png',
+    rentalPrice: 'RM 109 / month',
+    rentalPlans: [
+      { planName: 'Rental Plan (1st - 5th Year)', monthlyRate: 109, months: 60, customerType: 'New / Existing Customer' }
+    ],
+    outrightPrice: 'RM 3,500 (Promo)',
+    ccspPrice: 'N/A',
+    features: [
+      'In-and-Out Sterilisation System',
+      'Dual Sterilisation Power with 75°C High-Heat Water',
+      'High Capacity for 6 Pax',
+      'Multiple Washing Programs',
+      'Dual Drying System with Auto-Opening Door & Fan',
+      'Fine-Micron Sediment Filter',
+      'Sleek & Modern Design',
+      'Rinse Aid Detection LED',
+      'Dual Cleaning Nozzles'
+    ],
+    popular: true,
+    tag: 'NEW 🔥',
+    specs: {
+      'Model': 'CUCKOO QUBE Table Top Dishwasher',
+      'Product Colour': 'Grace White',
+      'Product Dimension & Gross Weight': '550mm(W) × 500mm(D) × 456mm(H)',
+      'Product Weight': '22.5KG (Without Packaging) | 26.5KG (With Packaging)',
+      'Power Consumption (W)': '1,190W - 1,260W',
+      'Rated Voltage': '220V, 60Hz',
+      'Capacity': '6 pax',
+      'Filter & Replacement Period': 'Fine-Micron Sediment Filter: Every 4 months | Drain Filter: Every 12 months',
+      'Mode': 'Programs | Extra Settings | Option Settings',
+      'Product Includes': 'Product, Drain Filter (built-in), Cutlery Holder, Suction Plate, Drain Hose and User Manual',
+      'Price': 'Purchase (Outright) Promotion Price: RM3,500 (Normal Price: RM4,000)',
+      'Rental Plan': 'RM109/month (1st - 5th Year) | FREE 5 Years of Scheduled Service & Warranty Every 4 Months'
+    }
+  },
   {
     id: 'rc-1',
     name: 'CUCKOO P10 Pressure Multi-Cooker',

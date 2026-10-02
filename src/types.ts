@@ -7,6 +7,7 @@ export type ProductCategory =
   | 'MATTRESS'
   | 'SAMSUNG PRODUCT'
   | 'RICE COOKER'
+  | 'DISHWASHER'
   | 'DAYBED'
   | 'TREADMILL';
 
