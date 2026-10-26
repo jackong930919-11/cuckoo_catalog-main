@@ -97,12 +97,6 @@ for (const product of PRODUCTS) {
   sitemapUrls.push(`${siteUrl}${url}`);
 }
 
-const directory = `<section aria-labelledby="product-directory-title" style="max-width:1120px;margin:32px auto;padding:24px;font:16px/1.6 system-ui,sans-serif">
-<h2 id="product-directory-title">CUCKOO product details</h2>
-<p>Browse model-specific specifications, rental and outright prices, service details, and current contact options.</p>
-<ul style="columns:2;column-gap:32px">${PRODUCTS.map((product) => `<li><a href="${productUrl(product.id)}">${escapeHtml(product.name)}</a></li>`).join('')}</ul>
-</section>`;
-
 const indexPath = path.join(distPath, 'index.html');
 let indexHtml = readFileSync(indexPath, 'utf8');
 indexHtml = indexHtml.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
@@ -123,7 +117,6 @@ const structuredData = {
   areaServed: ['Kuala Lumpur', 'Selangor', 'Malaysia'],
 };
 indexHtml = indexHtml.replace('</head>', `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>\n</head>`);
-indexHtml = indexHtml.replace('</body>', `${directory}\n</body>`);
 writeFileSync(indexPath, indexHtml);
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((url) => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`;
