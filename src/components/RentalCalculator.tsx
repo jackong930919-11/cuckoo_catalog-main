@@ -3,6 +3,7 @@ import { X, Calculator, ShieldCheck, CheckCircle2, MessageCircle, Info, Tag, Spa
 import { CUCKOO_CONTACT, CATEGORIES_LIST } from '../data/cuckooData';
 import { Product, ProductCategory } from '../types';
 import { getStoredProducts } from '../lib/productStore';
+import { getProductImageUrl } from '../lib/productImageUrl';
 
 interface RentalCalculatorProps {
   isOpen: boolean;
@@ -192,23 +193,25 @@ export const RentalCalculator: React.FC<RentalCalculatorProps> = ({ isOpen, onCl
             {/* Image Box */}
             <div className="relative aspect-4/3 sm:aspect-square w-full rounded-xl overflow-hidden bg-white border border-slate-200/60 shadow-xs">
               <img
-                src={product.image}
+                src={getProductImageUrl(product.image)}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-center"
               />
-              <div className="absolute top-2.5 left-2.5 bg-indigo-600 text-white px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase shadow-md">
-                {product.category}
-              </div>
-              {product.tag && (
-                <div className="absolute top-2.5 right-2.5 bg-amber-500 text-slate-950 px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase shadow-md flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 fill-slate-950" />
-                  <span>{product.tag}</span>
-                </div>
-              )}
             </div>
 
             {/* Product Title Info */}
             <div className="space-y-1.5">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="bg-indigo-600 text-white px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase">
+                  {product.category}
+                </span>
+                {product.tag && (
+                  <span className="bg-amber-500 text-slate-950 px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase inline-flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 fill-slate-950" />
+                    {product.tag}
+                  </span>
+                )}
+              </div>
               <span className="text-[10px] font-extrabold text-indigo-600 uppercase tracking-wider block">
                 Selected Product Preview
               </span>

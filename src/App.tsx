@@ -8,7 +8,6 @@ import { RentalCalculator } from './components/RentalCalculator';
 import { RentalPage } from './components/RentalPage';
 import { OutrightPage } from './components/OutrightPage';
 import { CcspPage } from './components/CcspPage';
-import { PromoCard } from './components/NewLaunchPromoCard';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { HomeVideoShowcase } from './components/HomeVideoShowcase';
 import { ContactForm } from './components/ContactForm';
@@ -30,7 +29,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
-  const [visibleCount, setVisibleCount] = useState<number>(7); // 2 promo cards + 7 products = 9 items (3 rows x 3 columns)
+  const [visibleCount, setVisibleCount] = useState<number>(9);
 
   // Dynamic products state synced with CMS
   const [allProducts, setAllProducts] = useState<Product[]>(getStoredProducts());
@@ -109,8 +108,6 @@ export default function App() {
     setUserSession(fresh);
     setIsCmsOpen(false);
   };
-
-  const showPromoCards = selectedCategory === 'ALL' && searchQuery.trim() === '';
 
   // Filter products based on Category and Search Query with Smart Aliases
   const filteredProducts = useMemo(() => {
@@ -213,7 +210,7 @@ export default function App() {
 
   const handleCategorySelect = (catId: ProductCategory | 'ALL') => {
     setSelectedCategory(catId);
-    setVisibleCount(catId === 'ALL' && searchQuery.trim() === '' ? 7 : 9);
+    setVisibleCount(9);
 
     setTimeout(() => {
       const targetSection = document.getElementById('category-filter-container') || document.getElementById('product-catalog');
@@ -254,7 +251,7 @@ export default function App() {
         onGoHome={() => {
           setSelectedCategory('ALL');
           setSearchQuery('');
-          setVisibleCount(7);
+          setVisibleCount(9);
         }}
       />
 
@@ -376,14 +373,6 @@ export default function App() {
             {filteredProducts.length > 0 ? (
               <div className="space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Dedicated Promotion Columns (Only shown on ALL Products view) */}
-                  {showPromoCards && (
-                    <>
-                      <PromoCard key="promo-new-launch" variant="NEW_LAUNCH" onOpenCalculator={() => setIsCalculatorOpen(true)} />
-                      <PromoCard key="promo-top-pick" variant="TOP_PICK" onOpenCalculator={() => setIsCalculatorOpen(true)} />
-                    </>
-                  )}
-
                   {displayedProducts.map((product) => (
                     <ProductCard
                       key={product.id}

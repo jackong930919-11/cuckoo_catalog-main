@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, MessageCircle, Flame, Snowflake, ShieldCheck, Droplets, Zap, Clock } from 'lucide-react';
 import { CUCKOO_CONTACT } from '../data/cuckooData';
+import { getProductImageUrl } from '../lib/productImageUrl';
 
 interface GraniteSpecTableProps {
   onInquire?: (model: string) => void;
@@ -64,7 +65,7 @@ export const GraniteSpecTable: React.FC<GraniteSpecTableProps> = ({ onInquire })
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-center">
           <div className="bg-slate-950 p-3 sm:p-4">
             <img
-              src={selectedImage}
+              src={getProductImageUrl(selectedImage)}
               alt="CUCKOO GRANITE Ice-Making Water Purifier"
               className="w-full h-full max-h-[420px] object-contain rounded-2xl bg-slate-900 border border-slate-800 shadow-inner"
             />
@@ -80,9 +81,9 @@ export const GraniteSpecTable: React.FC<GraniteSpecTableProps> = ({ onInquire })
                   aria-label={`View Granite product image ${index + 1}`}
                 >
                   <img
-                    src={image}
+                      src={getProductImageUrl(image)}
                     alt={`CUCKOO GRANITE product view ${index + 1}`}
-                    className="h-20 w-full object-cover bg-slate-900"
+                    className="h-20 w-full object-contain bg-slate-900"
                   />
                 </button>
               ))}

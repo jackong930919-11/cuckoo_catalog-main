@@ -10,7 +10,26 @@ export function getStoredProducts(): Product[] {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+        const products = parsed as Product[];
+        const migrated = products.map((product) => {
+          const isVitaModel = product.id === 'ac-1-10' || product.id === 'ac-1-15';
+          if (product.id === 'mc-1' && product.image === '/images/lounger-main.jpg') {
+            return { ...product, image: '/images/lounger-main.png' };
+          }
+          return isVitaModel && product.image === '/images/vita-main.jpeg'
+            ? { ...product, image: '/images/vita-main.png' }
+            : product;
+        });
+
+        if (migrated.some((product, index) => product !== products[index])) {
+          try {
+            localStorage.setItem(PRODUCT_STORAGE_KEY, JSON.stringify(migrated));
+          } catch (err) {
+            console.error('Failed to update stored main image paths:', err);
+          }
+        }
+
+        return migrated;
       }
     }
   } catch (err) {

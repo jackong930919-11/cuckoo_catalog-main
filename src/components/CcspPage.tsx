@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CUCKOO_CONTACT, CATEGORIES_LIST } from '../data/cuckooData';
 import { Product, ProductCategory } from '../types';
 import { getStoredProducts } from '../lib/productStore';
+import { getProductImageUrl } from '../lib/productImageUrl';
 import { HeartHandshake, ShieldCheck, CheckCircle2, MessageCircle, Info, ChevronDown, Sparkles, Filter, Search, RefreshCw } from 'lucide-react';
 import { PromoCard } from './NewLaunchPromoCard';
 
@@ -154,21 +155,17 @@ export const CcspPage: React.FC<CcspPageProps> = ({ onSelectProduct }) => {
               {/* Image Container with CCSP Pill */}
               <div className="relative aspect-4/3 bg-slate-100 overflow-hidden">
                 <img
-                  src={product.image}
+                  src={getProductImageUrl(product.image)}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain object-center"
                 />
-                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-emerald-700 text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
-                  {product.category}
-                </span>
-
-                <div className="absolute bottom-3 right-3 bg-emerald-600 text-white px-3 py-1 rounded-xl text-xs font-black shadow-md">
-                  CCSP: {product.ccspPrice}
-                </div>
               </div>
 
               {/* Body */}
               <div className="p-5 space-y-3">
+                <span className="inline-flex px-2.5 py-1 rounded-full bg-emerald-700 text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
+                  {product.category}
+                </span>
                 <div>
                   <h3 className="text-base font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">
                     {product.name}

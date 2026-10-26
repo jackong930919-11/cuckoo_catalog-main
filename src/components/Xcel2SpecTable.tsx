@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, MessageCircle, ShieldCheck, Droplets, Zap, Lock, Sliders, Layers, Play } from 'lucide-react';
 import { CUCKOO_CONTACT } from '../data/cuckooData';
+import { getProductImageUrl } from '../lib/productImageUrl';
 
 interface Xcel2SpecTableProps {
   onInquire?: (model: string) => void;
@@ -64,7 +65,7 @@ export const Xcel2SpecTable: React.FC<Xcel2SpecTableProps> = ({ onInquire }) => 
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-center">
           <div className="bg-slate-950 p-3 sm:p-4">
             <img
-              src={selectedImage}
+              src={getProductImageUrl(selectedImage)}
               alt="CUCKOO XCEL 2 Water Purifier"
               className="w-full h-full max-h-[420px] object-contain rounded-2xl bg-slate-900 border border-slate-800 shadow-inner"
             />
@@ -80,9 +81,9 @@ export const Xcel2SpecTable: React.FC<Xcel2SpecTableProps> = ({ onInquire }) => 
                   aria-label={`View XCEL 2 product image ${index + 1}`}
                 >
                   <img
-                    src={image}
+                      src={getProductImageUrl(image)}
                     alt={`CUCKOO XCEL 2 product view ${index + 1}`}
-                    className="h-20 w-full object-cover bg-slate-900"
+                    className="h-20 w-full object-contain bg-slate-900"
                   />
                 </button>
               ))}

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Search, X, Sparkles, ChevronRight, ArrowRight, Tag } from 'lucide-react';
 import { Product, ProductCategory } from '../types';
 import { getStoredProducts } from '../lib/productStore';
+import { getProductImageUrl } from '../lib/productImageUrl';
 
 interface SmartSearchBarProps {
   searchQuery: string;
@@ -228,9 +229,9 @@ export const SmartSearchBar: React.FC<SmartSearchBarProps> = ({
                     className="p-3 hover:bg-indigo-50/60 transition-colors flex items-center gap-3 cursor-pointer group"
                   >
                     <img
-                      src={product.image}
+                      src={getProductImageUrl(product.image)}
                       alt={product.name}
-                      className="w-12 h-12 object-contain bg-slate-50 rounded-xl p-1 border border-slate-200 shrink-0 group-hover:scale-105 transition-transform"
+                      className="w-12 h-12 object-contain object-center bg-slate-50 rounded-xl p-1 border border-slate-200 shrink-0"
                     />
 
                     <div className="flex-1 min-w-0">

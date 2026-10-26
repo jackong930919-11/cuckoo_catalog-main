@@ -26,7 +26,6 @@ export const SeoHead: FC = () => {
 
       setMeta('meta[name="title"]', settings.metaTitle || settings.siteTitle);
       setMeta('meta[name="description"]', settings.metaDescription);
-      setMeta('meta[name="keywords"]', settings.keywords);
       setMeta('meta[property="og:title"]', settings.ogTitle || settings.metaTitle || settings.siteTitle);
       setMeta('meta[property="og:description"]', settings.ogDescription || settings.metaDescription);
       setMeta('meta[property="og:image"]', settings.ogImage);

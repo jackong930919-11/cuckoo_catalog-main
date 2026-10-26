@@ -114,34 +114,30 @@ export const PrimeX3SpecTable: React.FC<PrimeX3SpecTableProps> = ({ onInquire })
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           {/* True Product Image Display */}
-          <div className="lg:col-span-6 bg-slate-900/90 rounded-2xl p-4 border border-slate-800 flex flex-col items-center justify-center relative overflow-hidden group">
+          <div className="lg:col-span-6 bg-slate-900/90 rounded-2xl p-4 border border-slate-800 flex flex-col items-center justify-center">
             <div className="relative w-full h-72 sm:h-80 rounded-xl overflow-hidden bg-slate-950 flex items-center justify-center">
               <img
                 src="/images/product-placeholder.svg"
                 alt="CUCKOO Prime X3 Outdoor Stainless Steel Water Filter"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-              
-              <div className="absolute top-3 left-3 bg-blue-950/90 border border-blue-600/50 text-blue-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full backdrop-blur-md">
-                SS304 Stainless Steel Vessel
+            </div>
+            <span className="mt-3 text-[10px] font-extrabold text-blue-200 bg-blue-950/90 border border-blue-600/50 px-2.5 py-1 rounded-full">
+              SS304 Stainless Steel Vessel
+            </span>
+            <div className="mt-3 w-full grid grid-cols-3 gap-2">
+              <div className="bg-slate-950 border border-slate-700/80 px-2 py-1.5 rounded-lg text-center">
+                <span className="text-[9px] text-slate-400 uppercase font-bold block">Front Width</span>
+                <span className="text-xs font-black text-blue-300">135 mm</span>
               </div>
-
-              {/* Dimension Callout Badges on Top of Real Image */}
-              <div className="absolute bottom-3 left-3 right-3 flex justify-between gap-2">
-                <div className="bg-slate-900/90 border border-slate-700/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-center flex-1">
-                  <span className="text-[9px] text-slate-400 uppercase font-bold block">Front Width</span>
-                  <span className="text-xs font-black text-blue-300">135 mm</span>
-                </div>
-                <div className="bg-slate-900/90 border border-blue-600/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-center flex-1 shadow-lg shadow-blue-950/50">
-                  <span className="text-[9px] text-blue-300 uppercase font-bold block">Height</span>
-                  <span className="text-xs font-black text-white">590 mm</span>
-                </div>
-                <div className="bg-slate-900/90 border border-slate-700/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-center flex-1">
-                  <span className="text-[9px] text-slate-400 uppercase font-bold block">Side Depth</span>
-                  <span className="text-xs font-black text-blue-300">155 mm</span>
-                </div>
+              <div className="bg-slate-950 border border-blue-600/80 px-2 py-1.5 rounded-lg text-center">
+                <span className="text-[9px] text-blue-300 uppercase font-bold block">Height</span>
+                <span className="text-xs font-black text-white">590 mm</span>
+              </div>
+              <div className="bg-slate-950 border border-slate-700/80 px-2 py-1.5 rounded-lg text-center">
+                <span className="text-[9px] text-slate-400 uppercase font-bold block">Side Depth</span>
+                <span className="text-xs font-black text-blue-300">155 mm</span>
               </div>
             </div>
             <p className="text-[11px] text-slate-400 font-semibold mt-3 text-center">

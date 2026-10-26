@@ -3,26 +3,25 @@ import { SeoSettings } from '../types';
 const SEO_STORAGE_KEY = 'cuckoo_seo_settings_v1';
 
 export const DEFAULT_SEO_SETTINGS: SeoSettings = {
-  siteTitle: 'CUCKOO Malaysia Official Sales Agent | Jack Ong (+6018-6668787)',
-  metaTitle: 'CUCKOO Malaysia Official Sales Agent | Jack Ong (+6018-6668787) | Water Purifier, Air Purifier & Aircond Rental',
-  metaDescription: 'Official CUCKOO Malaysia sales portal by Authorized Agent Jack Ong (+6018-6668787). Top water purifier & air purifier rental in Selangor, KL, and nationwide. CUCKOO vs Coway vs LG comparison, CUCKOO King Top 2, XCEL 2, GRANDE, TITAN, ACE Undersink, Vita-5TAR Airconds, and Napure Mattresses with free installation & servicing.',
-  keywords: 'CUCKOO water purifier, water purifier, Water purifier in malaysia, top water purifier, cuckoo air purifier, air purifier, cuckoo vs coway, coway vs cuckoo, which brand of water purifier is better, CUCKOO Malaysia Official Agent, By Jack Ong, CUCKOO Agent Jack Ong 0186668787, aircond rental, mattress, water purifier in selangor',
+  siteTitle: 'CUCKOO Malaysia Product Catalog | Jack Ong',
+  metaTitle: 'CUCKOO Malaysia Products, Rental & Purchase | Jack Ong',
+  metaDescription: 'Browse CUCKOO Malaysia product specifications, current rental and outright prices, service plans, and contact details for water purifiers, air purifiers, air conditioners, mattresses, and home appliances.',
+  keywords: '',
   canonicalUrl: 'https://www.cuckooebrandshop.com',
-  ogTitle: 'CUCKOO Malaysia Official Sales Agent | Jack Ong (+6018-6668787)',
-  ogDescription: 'Official CUCKOO Malaysia sales portal by Authorized Agent Jack Ong (+6018-6668787). Water Purifiers, Airconds, Air Purifiers & Mattresses with low monthly rental, FREE delivery, installation & warranty.',
-  ogImage: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4e?auto=format&fit=crop&w=1200&q=80',
-  twitterTitle: 'CUCKOO Malaysia Official Sales Agent | Jack Ong (+6018-6668787)',
-  twitterDescription: 'Official CUCKOO Malaysia sales portal by Authorized Agent Jack Ong (+6018-6668787). Water purifiers, air purifiers, airconds & mattresses with free installation & servicing.',
-  twitterImage: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4e?auto=format&fit=crop&w=1200&q=80',
+  ogTitle: 'CUCKOO Malaysia Products, Rental & Purchase | Jack Ong',
+  ogDescription: 'Browse CUCKOO Malaysia product specifications, current prices and service plans.',
+  ogImage: 'https://www.cuckooebrandshop.com/images/kingtop2-main.png',
+  twitterTitle: 'CUCKOO Malaysia Products, Rental & Purchase | Jack Ong',
+  twitterDescription: 'Browse CUCKOO Malaysia product specifications, current prices and service plans.',
+  twitterImage: 'https://www.cuckooebrandshop.com/images/kingtop2-main.png',
   jsonLd: `{
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "CUCKOO Malaysia Authorized Agent - Jack Ong",
-    "description": "Official CUCKOO Malaysia Authorized Sales Agent Jack Ong (+6018-6668787). Direct online orders, rental applications, and outright discounts for CUCKOO Water Purifiers, Air Purifiers, and Air Conditioners.",
-    "url": "https://cuckoo-malaysia.app",
+    "description": "Browse CUCKOO Malaysia product specifications, rental and outright prices, and service plans.",
+    "url": "https://www.cuckooebrandshop.com",
     "telephone": "+60186668787",
-    "areaServed": "Malaysia",
-    "priceRange": "RM 55 - RM 3399"
+    "areaServed": "Malaysia"
   }`
 };
 

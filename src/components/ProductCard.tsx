@@ -2,6 +2,7 @@ import React from 'react';
 import { Product } from '../types';
 import { MessageCircle, Phone, Info, Check, Sparkles, Tag, Shield, Calendar } from 'lucide-react';
 import { CUCKOO_CONTACT } from '../data/cuckooData';
+import { getProductImageUrl } from '../lib/productImageUrl';
 
 interface ProductCardProps {
   product: Product;
@@ -27,15 +28,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProdu
         {/* Product Image Header */}
         <div className="relative aspect-4/3 bg-slate-100 overflow-hidden">
           <img
-            src={product.image}
+            src={getProductImageUrl(product.image)}
             alt={product.name}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-contain object-center"
             loading="lazy"
           />
 
-          {/* Category Pill Overlay */}
-          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[70%]">
-            <span className="px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase">
+        </div>
+
+        {/* Content Body */}
+        <div className="p-5 space-y-4">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="px-2.5 py-1 rounded-full bg-slate-900 text-white text-[10px] font-bold tracking-wider uppercase">
               {product.category}
             </span>
             {product.tag && (
@@ -49,30 +53,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProdu
                 {product.tag}
               </span>
             )}
+            {product.popular && (
+              <span className="bg-amber-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-xs inline-flex items-center gap-1">
+                <Sparkles className="w-3 h-3 fill-white" /> Popular
+              </span>
+            )}
           </div>
-
-          {/* Popular Badge */}
-          {product.popular && (
-            <div className="absolute top-3 right-3 bg-amber-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1">
-              <Sparkles className="w-3 h-3 fill-white" /> Popular
-            </div>
-          )}
-        </div>
-
-        {/* Content Body */}
-        <div className="p-5 space-y-4">
           <div>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                onSelectProduct(product);
-              }}
-              className="text-left text-lg font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-1 hover:underline underline-offset-2 cursor-pointer"
-              aria-label={`View details for ${product.name}`}
+            <a
+              href={`/products/${encodeURIComponent(product.id)}/`}
+              className="block text-left text-lg font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-1 hover:underline underline-offset-2"
             >
               {product.name}
-            </button>
+            </a>
             <p className="text-xs font-medium text-slate-500 mt-1 line-clamp-2">
               {product.subtitle}
             </p>

@@ -483,7 +483,7 @@ export const CmsDashboard: React.FC<CmsDashboardProps> = ({
                             <img
                               src={p.image}
                               alt={p.name}
-                              className="w-16 h-16 rounded-xl object-cover bg-slate-800 border border-slate-700 shadow-sm"
+                              className="w-16 h-16 rounded-xl object-contain bg-white border border-slate-700 shadow-sm"
                             />
                           </td>
 

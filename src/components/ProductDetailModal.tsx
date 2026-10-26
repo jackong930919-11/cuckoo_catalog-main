@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Product } from '../types';
 import { X, Check, MessageCircle, Phone, ShieldCheck, Zap, Sparkles, Tag, HelpCircle, Play } from 'lucide-react';
 import { CUCKOO_CONTACT } from '../data/cuckooData';
+import { getProductImageUrl } from '../lib/productImageUrl';
 import { AirconSpecTable } from './AirconSpecTable';
 import { DaybedSpecTable } from './DaybedSpecTable';
 import { BespokeLoungerSpecTable } from './BespokeLoungerSpecTable';
@@ -202,11 +203,18 @@ const VALID_LOCAL_IMAGES = new Set([
   '/images/umodel-gallery-7.png',
   '/images/umodel-main.png',
   '/images/umodel-profile.png',
-  '/images/vita-gallery-1.png',
-  '/images/vita-gallery-2.png',
-  '/images/vita-gallery-3.png',
-  '/images/vita-main.png',
-  '/images/vita-profile.png',
+  '/images/vita-gallery-1.jpeg',
+  '/images/vita-gallery-2.jpeg',
+  '/images/vita-gallery-3.jpeg',
+  '/images/vita-gallery-4.jpeg',
+  '/images/vita-gallery-5.jpeg',
+  '/images/vita-gallery-6.jpeg',
+  '/images/vita-gallery-7.jpeg',
+  '/images/vita-gallery-8.jpeg',
+  '/images/vita-gallery-9.jpeg',
+  '/images/vita-gallery-10.jpeg',
+  '/images/vita-main.jpeg',
+  '/images/vita-profile.jpeg',
   '/images/vivid-gallery-1.png',
   '/images/vivid-main.png',
   '/images/vivid-profile.png',
@@ -247,7 +255,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
     const baseName = baseWithoutExt.replace(/-(main|profile)$/i, '');
     const candidates = [normalized];
 
-    Array.from({ length: 8 }, (_, index) => index + 1).forEach((index) => {
+    if (baseName === '/images/vita') {
+      const profilePath = `${baseName}-profile.${ext}`;
+      if (VALID_LOCAL_IMAGES.has(profilePath)) {
+        candidates.push(profilePath);
+      }
+    }
+
+    Array.from({ length: 10 }, (_, index) => index + 1).forEach((index) => {
       const galleryPath = `${baseName}-gallery-${index}.${ext}`;
       if (VALID_LOCAL_IMAGES.has(galleryPath)) {
         candidates.push(galleryPath);
@@ -285,24 +300,23 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
         className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 relative cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors font-bold"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
         {/* Modal Header Image */}
-        <div className="relative h-64 sm:h-72 bg-slate-100">
+        <div className="bg-slate-100">
+          <div className="h-64 sm:h-72">
           <img
-            src={product.image}
+            src={getProductImageUrl(product.image)}
             alt={product.name}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-contain object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-
-          <div className="absolute bottom-4 left-6 right-6 text-white space-y-1">
+          </div>
+          <div className="relative px-6 py-4 bg-slate-900 text-white space-y-1">
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-700 hover:bg-slate-600 text-white flex items-center justify-center transition-colors font-bold"
+              aria-label="Close product details"
+            >
+              <X className="w-5 h-5" />
+            </button>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="px-3 py-1 rounded-full bg-indigo-600 text-white text-[10px] font-black uppercase tracking-wider">
                 {product.category}
@@ -319,7 +333,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 </span>
               )}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+            <h2 className="pr-10 text-2xl sm:text-3xl font-black text-white leading-tight">
               {product.name}
             </h2>
             <p className="text-xs text-slate-200 font-medium">
@@ -348,7 +362,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
               </h4>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3">
                 <img
-                  src={selectedImage}
+                  src={getProductImageUrl(selectedImage)}
                   alt={product.name}
                   onError={(event) => {
                     event.currentTarget.style.display = 'none';
@@ -366,12 +380,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                       }`}
                     >
                       <img
-                        src={image}
+                        src={getProductImageUrl(image)}
                         alt={`${product.name} gallery ${index + 1}`}
                         onError={(event) => {
                           event.currentTarget.style.display = 'none';
                         }}
-                        className="h-16 w-full object-cover bg-white"
+                        className="h-16 w-full object-contain bg-white"
                       />
                     </button>
                   ))}
