@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { CUCKOO_CONTACT, PRODUCTS } from '../src/data/cuckooData';
+import { OFFICE_PAGE_PATH, renderOfficePage } from './office-page';
 
 const siteUrl = 'https://www.cuckooebrandshop.com';
 const distPath = path.resolve('dist');
@@ -96,6 +97,11 @@ for (const product of PRODUCTS) {
   writeFileSync(outputPath, renderProductPage(product));
   sitemapUrls.push(`${siteUrl}${url}`);
 }
+
+const officePath = path.join(distPath, OFFICE_PAGE_PATH, 'index.html');
+mkdirSync(path.dirname(officePath), { recursive: true });
+writeFileSync(officePath, renderOfficePage(siteUrl, CUCKOO_CONTACT, PRODUCTS));
+sitemapUrls.push(`${siteUrl}${OFFICE_PAGE_PATH}`);
 
 const indexPath = path.join(distPath, 'index.html');
 let indexHtml = readFileSync(indexPath, 'utf8');
