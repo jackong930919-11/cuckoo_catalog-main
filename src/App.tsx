@@ -243,7 +243,6 @@ export default function App() {
           setSearchQuery(q);
           setVisibleCount(9);
         }}
-        onOpenCalculator={() => setIsCalculatorOpen(true)}
         session={userSession}
         onScrollToContact={scrollToContact}
         onSelectProduct={(p) => setSelectedProduct(p)}

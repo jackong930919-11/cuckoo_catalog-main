@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, Search, ShieldCheck, Sparkles, MessageCircle, Calculator, Home, Inbox, Lock, Database, ShieldAlert } from 'lucide-react';
+import { Phone, Mail, MapPin, Search, ShieldCheck, Sparkles, MessageCircle, Building2, Home, Inbox, Lock, Database, ShieldAlert } from 'lucide-react';
 import { CUCKOO_CONTACT } from '../data/cuckooData';
 import { CuckooLogo } from './CuckooLogo';
 import { PromoMarquee } from './PromoMarquee';
@@ -9,12 +9,13 @@ import { getBackgroundInquiries } from '../lib/inquiryStore';
 import { VisitorCounter } from './VisitorCounter';
 import { UserSession } from '../lib/authStore';
 
+const OFFICE_PAGE_URL = '/office-water-purifier-malaysia/';
+
 interface NavbarProps {
   activePage: 'all' | 'rental' | 'outright' | 'ccsp';
   setActivePage: (page: 'all' | 'rental' | 'outright' | 'ccsp') => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  onOpenCalculator: () => void;
   onScrollToContact: () => void;
   onGoHome?: () => void;
   onSelectProduct?: (product: Product) => void;
@@ -29,7 +30,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   setActivePage,
   searchQuery,
   setSearchQuery,
-  onOpenCalculator,
   onScrollToContact,
   onGoHome,
   onSelectProduct,
@@ -135,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center gap-2 sm:gap-3 cursor-pointer group py-1 shrink-0"
         >
           <CuckooLogo variant="full" />
-          <div className="hidden md:block border-l border-slate-200 pl-3">
+          <div className="hidden md:block lg:hidden xl:block border-l border-slate-200 pl-3">
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-50 text-[#801217] border border-red-100 block w-fit mb-0.5">
               OFFICIAL STORE
             </span>
@@ -200,22 +200,20 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             CCSP Service
           </button>
+          <a
+            href={OFFICE_PAGE_URL}
+            className="px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 text-slate-600 hover:text-sky-600"
+          >
+            <Building2 className="w-3.5 h-3.5 text-sky-600 shrink-0" />
+            <span>Office Solution</span>
+          </a>
         </nav>
 
         {/* Actions Buttons */}
         <div className="flex items-center gap-2 sm:gap-3">
-          <button
-            onClick={onOpenCalculator}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm transition-all shadow-xs"
-            title="Calculate monthly rental vs outright"
-          >
-            <Calculator className="w-4 h-4 text-indigo-600" />
-            <span className="hidden sm:inline">Rental</span> Calculator
-          </button>
-
           <a
             href={`tel:${CUCKOO_CONTACT.phone}`}
-            className="hidden xl:flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors"
+            className="hidden 2xl:flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-indigo-600" />
             {CUCKOO_CONTACT.phone}
@@ -287,6 +285,13 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           CCSP Service
         </button>
+        <a
+          href={OFFICE_PAGE_URL}
+          className="px-3 py-1.5 rounded-xl whitespace-nowrap transition-all flex items-center gap-1 bg-sky-50 text-sky-700 border border-sky-100"
+        >
+          <Building2 className="w-3.5 h-3.5" />
+          <span>Office Solution</span>
+        </a>
       </div>
 
       {/* Animated Moving Marquee Banner */}
